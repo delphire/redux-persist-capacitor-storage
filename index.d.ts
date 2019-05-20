@@ -1,17 +1,11 @@
 declare module 'redux-persist-capacitor-storage' {
-  interface Options {
-    storagePath: string
-    encoding: string
-    toFileName: (name: string) => string
-    fromFileName: (name: string) => string
-  }
+
 
   const CapacitorEngineStorage: {
-    //config: (customOptions: Partial<Options>) => Options
 
     setItem: (
       key: string,
-      value: string,
+      value?: string,
       callback?: (error?: Error) => void,
     ) => Promise<void>
 
