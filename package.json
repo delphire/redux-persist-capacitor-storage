@@ -1,15 +1,15 @@
 {
-  "name": "redux-persist-filesystem-storage",
+  "name": "redux-capacitor-storage",
   "version": "1.3.2",
-  "description": "Redux persist adaptor for React Native filesystem storage",
+  "description": "Redux persist adaptor for Capacitor SQL Lite storage",
   "main": "index.js",
   "repository": {
-    "url": "https://github.com/robwalkerco/redux-persist-filesystem-storage",
+    "url": "https://github.com/delphire/redux-persist-capacitor-storage",
     "type": "git"
   },
-  "author": "Rob Walker",
+  "author": "Bruce Hubbard",
   "license": "MIT",
   "dependencies": {
-    "rn-fetch-blob": "^0.10.0"
+    "capacitor-data-storage-sqlite": "^0.0.9"
   }
 }

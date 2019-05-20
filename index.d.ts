@@ -1,4 +1,4 @@
-declare module 'redux-persist-filesystem-storage' {
+declare module 'redux-persist-capacitor-storage' {
   interface Options {
     storagePath: string
     encoding: string
@@ -6,7 +6,7 @@ declare module 'redux-persist-filesystem-storage' {
     fromFileName: (name: string) => string
   }
 
-  const FilesystemStorage: {
+  const CapacitorEngineStorage: {
     config: (customOptions: Partial<Options>) => Options
 
     setItem: (
@@ -32,5 +32,5 @@ declare module 'redux-persist-filesystem-storage' {
     clear: (callback: (error?: Error) => void) => Promise<boolean>
   }
 
-  export default FilesystemStorage
+  export default CapacitorEngineStorage
 }
