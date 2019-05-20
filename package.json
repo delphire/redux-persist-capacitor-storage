@@ -10,7 +10,5 @@
   "author": "Bruce Hubbard",
   "license": "MIT",
   "dependencies": {
-    "capacitor-data-storage-sqlite": "^0.0.9",
-    "typescript": "^2.6.2"
   }
 }
