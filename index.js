@@ -2,7 +2,7 @@
 * @flow
 */
 import { Plugins } from '@capacitor/core';
-import CapacitorDataStorageSqlite from 'capacitor-data-storage-sqlite'
+import * as CapacitorDataStorage from 'capacitor-data-storage-sqlite'
 
 let options = {
   //storagePath: `${RNFetchBlob.fs.dirs.DocumentDir}/persistStore`,
