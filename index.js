@@ -15,14 +15,14 @@ let options = {
 const { CapacitorDataStorageSqlite } = Plugins;
 
 const CapacitorEngineStorage = {
-  config: (
-    customOptions: Object,
-  ) => {
-    options = {
-      ...options,
-      ...customOptions,
-    }
-  },
+  // config: (
+  //   customOptions: Object,
+  // ) => {
+  //   options = {
+  //     ...options,
+  //     ...customOptions,
+  //   }
+  // },
 
   setItem: (
     key: string,

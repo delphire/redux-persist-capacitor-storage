@@ -7,7 +7,7 @@ declare module 'redux-persist-capacitor-storage' {
   }
 
   const CapacitorEngineStorage: {
-    config: (customOptions: Partial<Options>) => Options
+    //config: (customOptions: Partial<Options>) => Options
 
     setItem: (
       key: string,
