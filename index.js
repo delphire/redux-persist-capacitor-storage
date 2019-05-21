@@ -1,36 +1,35 @@
-declare module 'redux-persist-capacitor-storage' {
-  interface Options {
-    storagePath: string
-    encoding: string
-    toFileName: (name: string) => string
-    fromFileName: (name: string) => string
+import { Plugins } from '@capacitor/core';
+import * as CapicitorStorage from 'capacitor-data-storage-sqlite';
+
+async function withCallback(callback, func) {
+  try {
+    const result = await func();
+    if (callback) {
+      callback(null, result);
+    }
+    return result;
+  } catch (err) {
+    if (callback) {
+      callback(err);
+    } else {
+      throw err;
+    }
   }
-
-  const CapacitorEngineStorage: {
-    //config: (customOptions: Partial<Options>) => Options
-
-    setItem: (
-      key?: string,
-      value?: string,
-      callback?: (error?: Error) => void,
-    ) => Promise<void>
-
-    getItem: (
-      key: string,
-      callback: (error?: Error, result?: string) => void,
-    ) => Promise<string | undefined>
-
-    removeItem: (
-      key: string,
-      callback: (error?: Error) => void,
-    ) => Promise<undefined>
-
-    getAllKeys: (
-      callback: (error?: Error, keys?: Array<string>) => void,
-    ) => Promise<string[]> | Promise<undefined>
-
-    clear: (callback: (error?: Error) => void) => Promise<boolean>
-  }
-
-  export default CapacitorEngineStorage
 }
+
+const { CapacitorDataStorageSqlitePlugin } = Plugins;
+
+export const CapacitorEngineStorage  = {
+
+  async setItem(key, value, callback) {
+    return withCallback(callback, async function() {
+      CapacitorDataStorageSqlitePlugin.set({key:key,value:value})
+      .then((response) => {
+        return true;
+      })
+    });
+  }
+
+}
+
+
