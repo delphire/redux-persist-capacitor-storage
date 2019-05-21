@@ -23,7 +23,7 @@ export const CapacitorEngineStorage  = {
 
   async setItem(key, value, callback) {
     return withCallback(callback, async function() {
-      CapacitorDataStorageSqlitePlugin.set({key:key,value:value})
+      CapacitorDataStorageSqlitePlugin.setItem({key:key,value:value})
       .then((response) => {
         return true;
       })
