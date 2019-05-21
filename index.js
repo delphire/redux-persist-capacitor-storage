@@ -30,6 +30,15 @@ export const CapacitorEngineStorage  = {
     });
   }
 
+  async getItem(key, callback) {
+    return withCallback(callback, async function() {
+      CapacitorDataStorageSqlitePlugin.setItem({key:key})
+      .then((response) => {
+        return response;
+      })
+    });
+  }
+
 }
 
 
