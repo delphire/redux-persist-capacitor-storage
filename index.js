@@ -1,5 +1,5 @@
 import { Plugins } from '@capacitor/core';
-import * as CapicitorStorage from 'capacitor-data-storage-sqlite';
+import * as CapacitorSQLPlugin from 'capacitor-data-storage-sqlite';
 
 async function withCallback(callback, func) {
   try {
@@ -17,22 +17,22 @@ async function withCallback(callback, func) {
   }
 }
 
-const { CapacitorDataStorageSqlitePlugin } = Plugins;
+const { CapacitorDataStorageSqlite } = Plugins;
 
 export const CapacitorEngineStorage  = {
 
   async setItem(key, value, callback) {
     return withCallback(callback, async function() {
-      CapacitorDataStorageSqlitePlugin.setItem({key:key,value:value})
+      CapacitorDataStorageSqlite.setItem({key:key,value:value})
       .then((response) => {
         return true;
       })
     });
-  }
+  },
 
   async getItem(key, callback) {
     return withCallback(callback, async function() {
-      CapacitorDataStorageSqlitePlugin.setItem({key:key})
+      CapacitorDataStorageSqlite.setItem({key:key})
       .then((response) => {
         return response;
       })
